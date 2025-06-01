@@ -1,0 +1,704 @@
+/* GenAI-UI-UX-Markdowns/02_color_palette.md */
+:root {
+    --primary-color: #4590C4; /* Blue from logo */
+    --secondary-color: #192A51; /* Black from logo (used as dark accent/secondary) */
+    --accent-color-1: #EEB546; /* Gold from logo */
+    --accent-color-2: #C93732; /* Red from logo */
+    --text-color-light: #f8f9fa;
+    --text-color-dark: #212529; /* Will ensure this has good contrast with primary/secondary */
+    --background-color-light: #ffffff;
+    --background-color-dark: #192A51; /* Using the logo's black for dark theme potential */
+    --neutral-color-1: #e9ecef;
+    --neutral-color-2: #ced4da;
+    --primary-color-rgb: 69, 144, 196; /* RGB for #4590C4 */
+    --secondary-color-rgb: 25, 42, 81;
+}
+
+/* GenAI-UI-UX-Markdowns/03_typography_system.md */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; /* Modern font stack */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color-light);
+    color: var(--text-color-dark);
+}
+
+.container {
+    width: 90%; /* Slightly wider for modern feel */
+    max-width: 1200px; /* Max width for larger screens */
+    margin: auto;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+/* Header Styling */
+header#main-header {
+    background: var(--background-color-light); /* White background */
+    color: var(--secondary-color); /* Dark text for contrast */
+    padding: 15px 0; /* Adjusted padding */
+    min-height: auto; /* Remove fixed min-height */
+    border-bottom: 1px solid var(--neutral-color-1); /* Softer border */
+    position: fixed; /* Sticky header */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: padding 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+header#main-header.scrolled {
+    padding: 10px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex; /* Allows easy switching if needed, or could be position absolute */
+    align-items: center;
+}
+
+.logo {
+    height: 80px; /* Default height for square logo */
+    display: none; /* Hide logos by default */
+    transition: opacity 0.3s ease;
+}
+
+.logo.active {
+    display: block; /* Show active logo */
+}
+
+#logo-banner {
+    height: 45px; /* Slightly taller for banner */
+    max-width: 180px; /* Prevent banner from being too wide */
+}
+
+header#main-header.scrolled #logo-square {
+    display: none;
+}
+header#main-header.scrolled #logo-banner {
+    display: block;
+}
+
+nav#main-nav ul {
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 0;
+    list-style: none;
+    display: flex; /* Align items horizontally */
+}
+
+nav#main-nav li {
+    display: inline; /* Kept for fallback, but flex handles it */
+    margin-left: 25px; /* Spacing between nav items */
+}
+
+nav#main-nav a {
+    color: var(--secondary-color); /* Dark text for links */
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 15px; /* Slightly smaller */
+    font-weight: 500; /* Medium weight for clarity */
+    transition: color 0.3s ease;
+}
+
+nav#main-nav a:hover,
+nav#main-nav a:focus,
+nav#main-nav a.active-link { /* For active page indication */
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--accent-color-1);
+    padding-bottom: 5px;
+}
+
+/* Hamburger Menu */
+#burger-menu {
+    display: none; /* Hidden on desktop */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+}
+
+#burger-menu .burger-bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--secondary-color);
+    margin: 5px 0;
+    transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
+}
+
+/* Section defaults */
+section {
+    padding: 40px 0;
+    border-bottom: 1px solid var(--neutral-color-1);
+}
+
+section:last-child {
+    border-bottom: none;
+}
+
+/* Footer Styling */
+footer {
+    background: var(--secondary-color);
+    color: var(--text-color-light);
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* Utility for clearing floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Home Section Styling */
+#home {
+    background-color: var(--background-color-light);
+    text-align: center; /* Center the main welcome text */
+}
+
+#home h2 {
+    margin-top: 0;
+    padding-top: 20px; /* Add some space if h2 is directly after header */
+    color: var(--primary-color);
+}
+
+.profile-overview {
+    text-align: left; /* Align text to the left for summary and skills */
+    margin-top: 20px;
+}
+
+.profile-banner-image {
+    width: 100%;
+    max-height: 300px; /* Adjust as needed */
+    object-fit: cover; /* To cover the area without distorting aspect ratio */
+    margin-bottom: 30px;
+    border-radius: 8px; /* Optional: for rounded corners */
+}
+
+.profile-overview h3 {
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--accent-color-1);
+    padding-bottom: 5px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 1.8em; /* Slightly larger for better hierarchy */
+}
+
+.skills-container {
+    /* display: flex; Remove flex for CSS columns */
+    /* flex-wrap: wrap; */
+    /* gap: 20px; */
+    /* justify-content: space-between; */
+    
+    column-count: 3; /* Aim for 3 columns */
+    column-gap: 30px; /* Space between columns */
+    margin-top: 20px;
+}
+
+.skills-category {
+    /* background-color: var(--neutral-color-1); No longer needed if container has background? Or keep for contrast. */
+    background-color: var(--background-color-light); /* Cards on the home section background */
+    padding: 20px; /* Increased padding */
+    border-radius: 8px; /* More rounded corners */
+    /* flex-basis: calc(33.333% - 20px); Remove flex-basis */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08); /* Softer shadow */
+    margin-bottom: 30px; /* Space between items in the same column */
+    break-inside: avoid-column; /* Prevent categories from breaking across columns */
+    width: 100%; /* Ensure it takes full width of its column slot */
+}
+
+.skills-category h4 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.skills-category ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skills-category li {
+    background-color: var(--background-color-light);
+    color: var(--text-color-dark);
+    padding: 8px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    font-size: 0.9em;
+    border-left: 3px solid var(--accent-color-1);
+}
+
+/* Responsive adjustments for columns */
+@media (max-width: 992px) { /* For tablets */
+    .skills-container {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 576px) { /* For small mobile */
+    .skills-container {
+        column-count: 1;
+    }
+}
+
+/* Responsive Navigation (Tablet/Mobile) - Example breakpoint: 768px */
+@media (max-width: 768px) {
+    .header-container {
+        /* Allow logo and burger to align properly */
+    }
+
+    nav#main-nav {
+        display: none; /* Hide nav by default on mobile */
+        position: absolute;
+        top: 100%; /* Position below the header */
+        left: 0;
+        width: 100%;
+        background-color: var(--background-color-light);
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        padding: 10px 0;
+    }
+
+    nav#main-nav.open {
+        display: block; /* Show nav when burger is clicked */
+    }
+
+    nav#main-nav ul {
+        flex-direction: column; /* Stack links vertically */
+        align-items: center;
+    }
+
+    nav#main-nav li {
+        margin: 10px 0;
+        padding: 0;
+    }
+
+    nav#main-nav a {
+        padding: 10px 20px;
+        display: block; /* Make links full width for easier tapping */
+        width: 100%;
+        text-align: center;
+    }
+
+    nav#main-nav a:hover,
+    nav#main-nav a:focus,
+    nav#main-nav a.active-link {
+        background-color: var(--neutral-color-1);
+        border-bottom: none; /* Remove border for mobile view */
+    }
+
+    #burger-menu {
+        display: block; /* Show burger on mobile */
+    }
+
+    /* Burger animation to X */
+    #burger-menu.open .burger-bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    #burger-menu.open .burger-bar:nth-child(2) {
+        opacity: 0;
+    }
+    #burger-menu.open .burger-bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    
+    /* Adjust body padding if header height changes when scrolled on mobile */
+    /* body.scrolled-padding { -- JS handles dynamic padding now
+      padding-top: 65px; 
+    } */
+}
+
+/* General Section Title Styling */
+section h2 {
+    text-align: center;
+    margin-bottom: 50px; /* Increased margin */
+    font-size: clamp(2.5em, 5vw, 4.5em); /* Responsive font size: min, preferred (scales with viewport width), max */
+    font-weight: 700; /* Bolder */
+    line-height: 1.2;
+    /* Creative text styling */
+    background: linear-gradient(45deg, var(--primary-color), var(--accent-color-2), var(--accent-color-1));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    /* text-fill-color: transparent; */ /* Standard property, but -webkit- is often needed */
+    padding-bottom: 10px; /* Space for potential underline/effect */
+    position: relative; /* For pseudo-elements if needed for more effects */
+}
+
+/* Optional: Add a subtle underline effect */
+section h2::after {
+    content: '';
+    display: block;
+    width: 80px; /* Width of the underline */
+    height: 4px;
+    background: var(--accent-color-1); /* Gold underline */
+    margin: 15px auto 0; /* Center the underline */
+    border-radius: 2px;
+}
+
+/* Home Section Styling - adjustments if needed */
+#home h2 { /* Specific styling for home if different from general section titles */
+    margin-top: 0;
+    padding-top: 20px;
+    font-size: clamp(2em, 4vw, 3.5em); /* Slightly smaller for the welcome, still responsive */
+    /* Retain gradient fill from general h2 or specify different if desired */
+    background: linear-gradient(45deg, var(--primary-color), var(--accent-color-2), var(--accent-color-1));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    /* text-fill-color: transparent; */
+}
+
+#home h2::after {
+    /* Optionally remove or change the underline for the home H2 if it feels too much */
+    /* display: none; */ 
+}
+
+/* Projects Section Styling */
+#projects {
+    background-color: var(--neutral-color-1); /* Light contrasting background */
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 30px;
+}
+
+.project-card {
+    background-color: var(--background-color-light);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden; /* Ensures image corners are rounded if border-radius is applied */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.project-thumbnail {
+    width: 100%;
+    height: 200px; /* Fixed height for thumbnails */
+    object-fit: cover; /* Cover the area, cropping if necessary */
+}
+
+.project-card h3 {
+    color: var(--secondary-color);
+    margin: 20px 20px 10px 20px;
+    font-size: 1.5em;
+}
+
+.project-card p {
+    margin: 0 20px 15px 20px;
+    font-size: 0.95em;
+    line-height: 1.7;
+    flex-grow: 1; /* Allows description to fill space if cards have varying content height */
+}
+
+.project-tags {
+    margin: 0 20px 15px 20px;
+    padding: 0;
+}
+
+.project-tags span {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    padding: 5px 10px;
+    border-radius: 15px; /* Pill shape */
+    font-size: 0.8em;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.btn-view-project {
+    display: inline-block;
+    background-color: var(--accent-color-1);
+    color: var(--secondary-color); /* Using dark text on gold for contrast */
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 20px 20px 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-view-project:hover {
+    background-color: #d4a03f; /* Darker gold for hover */
+}
+
+/* Contact Section Styling */
+#contact {
+    background-color: var(--background-color-light); /* Or a very light neutral if preferred */
+    padding-bottom: 0; /* Map might go to the edge or have its own padding */
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; /* Adjust ratio as needed, details | form */
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.contact-details h3,
+.contact-form-container h3 {
+    color: var(--secondary-color);
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.contact-details h3::after,
+.contact-form-container h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--accent-color-1);
+}
+
+.contact-details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-details li {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.contact-details li strong {
+    color: var(--primary-color);
+}
+
+.contact-details a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-details a:hover {
+    color: var(--accent-color-1);
+}
+
+/* Form Styling (referencing 05_02_forms.md principles) */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 14px; /* Increased padding */
+    border: 1px solid var(--neutral-color-2); /* Keep it subtle */
+    border-radius: 6px; /* Slightly more rounded */
+    font-family: inherit;
+    font-size: 1em;
+    background-color: var(--background-color-light); /* Ensure consistent background */
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background-color: #fff; /* Ensure background stays white on focus */
+    box-shadow: 0 0 0 3px rgba(var(--primary-color-rgb, 69, 144, 196), 0.3); /* Slightly stronger alpha for shadow */
+}
+
+.btn-submit {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-submit:hover {
+    background-color: var(--accent-color-2); /* Using red for hover on submit */
+    transform: translateY(-2px);
+}
+
+/* Map Styling */
+#map-container {
+    margin-top: 30px; /* Spacing above map if contact-grid is dense */
+}
+
+#map {
+    width: 100%;
+    height: 450px; /* Must have a defined height */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Responsive Contact Section */
+@media (max-width: 992px) {
+    .contact-grid {
+        grid-template-columns: 1fr; /* Stack on tablets */
+    }
+    .contact-form-container {
+        margin-top: 30px; /* Add space when stacked */
+    }
+}
+
+/* Blog Section Styling */
+#blog {
+    background-color: var(--neutral-color-1); /* Light background for contrast */
+    padding-bottom: 40px; /* Ensure padding at the bottom of the section */
+}
+
+.blog-layout {
+    max-width: 800px; /* Optimal width for single-column readability */
+    margin: 0 auto; /* Center the blog content area */
+}
+
+.blog-post {
+    background-color: var(--background-color-light);
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    margin-bottom: 40px; /* Space between blog posts if multiple */
+}
+
+.blog-post:last-child {
+    margin-bottom: 0;
+}
+
+.blog-post-header {
+    border-bottom: 1px solid var(--neutral-color-2);
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+}
+
+.blog-post-header h3 {
+    font-size: 2em; /* Prominent post title */
+    color: var(--secondary-color);
+    margin-top: 0;
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+.blog-meta {
+    font-size: 0.9em;
+    color: var(--secondary-color); /* Softer text color for meta */
+    display: flex;
+    flex-wrap: wrap; /* Allow tags to wrap */
+    gap: 10px 20px; /* Row and column gap for date and tags block */
+    align-items: center;
+}
+
+.blog-meta .blog-date,
+.blog-meta .blog-tags {
+    margin-bottom: 5px; /* Spacing if they wrap */
+}
+
+.blog-meta .blog-tags span {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.85em;
+    margin-right: 5px; /* Spacing between individual tags */
+}
+
+.blog-meta .blog-tags span:last-child {
+    margin-right: 0;
+}
+
+.blog-content h4 {
+    font-size: 1.5em;
+    color: var(--primary-color);
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.blog-content p,
+.blog-content ul,
+.blog-content ol {
+    font-size: 1.05em; /* Slightly larger for readability */
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: var(--text-color-dark);
+}
+
+.blog-content ul,
+.blog-content ol {
+    padding-left: 25px;
+}
+
+.blog-content li {
+    margin-bottom: 10px;
+}
+
+.blog-content a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.blog-content a:hover {
+    text-decoration: underline;
+    color: var(--accent-color-2);
+}
+
+.blog-content code {
+    background-color: var(--neutral-color-2); /* Slightly darker than page bg for contrast */
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    color: var(--accent-color-2); /* Red for code text */
+    font-size: 0.9em;
+}
+
+/* Responsive Blog Adjustments */
+@media (max-width: 768px) {
+    .blog-post {
+        padding: 20px;
+    }
+    .blog-post-header h3 {
+        font-size: 1.8em;
+    }
+    .blog-content h4 {
+        font-size: 1.3em;
+    }
+    .blog-content p,
+    .blog-content ul,
+    .blog-content ol {
+        font-size: 1em;
+    }
+} 

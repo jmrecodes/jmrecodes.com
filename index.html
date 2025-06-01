@@ -1,1 +1,162 @@
-Site under construction.. 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jmrecodes | Backend Laravel Developer | Software Recoders PH</title>
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="main-header">
+        <div class="container header-container">
+            <div class="logo-container">
+                <img src="assets/images/logo.jpg" alt="SFTWR RCDRS Logo Square" id="logo-square" class="logo active">
+                <img src="assets/images/banner_logo.jpg" alt="SFTWR RCDRS Logo Banner" id="logo-banner" class="logo">
+            </div>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </nav>
+            <button id="burger-menu" aria-label="Open navigation menu" aria-expanded="false">
+                <span class="burger-bar"></span>
+                <span class="burger-bar"></span>
+                <span class="burger-bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section id="home">
+            <div class="container">
+                <h2>Hi! My name is John Moremm, a Backend Laravel Developer. Welcome to my portfolio site.</h2>
+                <div class="profile-overview">
+                    <h3>Professional Summary</h3>
+                    <p>Results-driven Full-stack Developer with 4 years of experience in web development utilizing Laravel/PHP and 1 year specializing in frontend and mobile applications with React.js/React Native. Proven ability to deliver strategic, business-oriented software solutions with a methodical approach to problem-solving.</p>
+                    
+                    <h3>Technical Skills</h3>
+                    <div class="skills-container">
+                        <div class="skills-category">
+                            <h4>Frontend</h4>
+                            <ul>
+                                <li>JavaScript</li>
+                                <li>jQuery</li>
+                                <li>HTML5</li>
+                                <li>CSS3</li>
+                                <li>Bootstrap</li>
+                                <li>React.js</li>
+                                <li>React Native</li>
+                                <li>Vue.js</li>
+                            </ul>
+                        </div>
+                        <div class="skills-category">
+                            <h4>Backend</h4>
+                            <ul>
+                                <li>PHP</li>
+                                <li>Laravel</li>
+                                <li>Node.js</li>
+                                <li>Express</li>
+                            </ul>
+                        </div>
+                        <div class="skills-category">
+                            <h4>Databases</h4>
+                            <ul>
+                                <li>MySQL</li>
+                                <li>MariaDB</li>
+                                <li>PostgreSQL</li>
+                                <li>MongoDB</li>
+                            </ul>
+                        </div>
+                        <div class="skills-category">
+                            <h4>Tools & Methods</h4>
+                            <ul>
+                                <li>RESTful APIs</li>
+                                <li>Git</li>
+                                <li>Agile Development</li>
+                            </ul>
+                        </div>
+                        <div class="skills-category">
+                            <h4>Core Competencies</h4>
+                            <ul>
+                                <li>Algorithm Design</li>
+                                <li>Database Design</li>
+                                <li>Back End Development</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="projects">
+            <div class="container">
+                <h2>My Projects</h2>
+                <div class="project-grid">
+                    <article class="project-card">
+                        <!-- <img src="assets/images/project-portfolio-thumb.jpg" alt="Portfolio Project Thumbnail" class="project-thumbnail"> -->
+                        <h3>This Portfolio Website</h3>
+                        <p class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive Design</span></p>
+                        <p>My personal portfolio site, designed and built from scratch using vanilla HTML, CSS, and JavaScript. It showcases my skills, projects, and provides a way to get in touch. The site is fully responsive and built with future adaptability in mind.</p>
+                        <!-- <a href="#" class="btn-view-project">View Details (coming soon)</a> -->
+                    </article>
+                    <!-- More projects will be added here -->
+                </div>
+            </div>
+        </section>
+        <section id="contact">
+            <div class="container">
+                <h2>Get In Touch</h2>
+                <div class="contact-grid">
+                    <div class="contact-details">
+                        <h3>Contact Information</h3>
+                        <p>Have a project in mind or just want to say hi? Feel free to reach out!</p>
+                        <ul>
+                            <li><strong>Email:</strong> <a href="mailto:admin@jmrecodes.com">admin@jmrecodes.com</a></li>
+                            <li><strong>Phone:</strong> <a href="tel:+639605113085">+639 605 113 085</a></li>
+                            <li><strong>Location:</strong> Negros Oriental, Central Visayas, Philippines</li>
+                        </ul>
+                        <!-- Social links can be added here later -->
+                    </div>
+                    <div class="contact-form-container">
+                        <h3>Send Me a Message</h3>
+                        <form id="contact-form" action="#" method="POST"> <!-- Replace # with your form handling endpoint -->
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn-submit" disabled>Send Message</button>
+                        </form>
+                    </div>
+                </div>
+                <div id="map-container">
+                    <div id="map"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 jmrecodes. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBt6k03WFmFgBY3KL0mfH4pSiCEvtOd6xs&loading=async&callback=initMap"></script>
+</body>
+</html> 

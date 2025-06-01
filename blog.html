@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | jmrecodes | Backend Laravel Developer</title>
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="main-header">
+        <div class="container header-container">
+            <div class="logo-container">
+                <a href="index.html#home"> <!-- Link logo back to home -->
+                    <img src="assets/images/logo.jpg" alt="SFTWR RCDRS Logo Square" id="logo-square" class="logo active">
+                    <img src="assets/images/banner_logo.jpg" alt="SFTWR RCDRS Logo Banner" id="logo-banner" class="logo">
+                </a>
+            </div>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#projects">Projects</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="blog.html" class="active-link">Blog</a></li> <!-- Blog link active on this page -->
+                </ul>
+            </nav>
+            <button id="burger-menu" aria-label="Open navigation menu" aria-expanded="false">
+                <span class="burger-bar"></span>
+                <span class="burger-bar"></span>
+                <span class="burger-bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section id="blog" class="blog-page-section"> <!-- Add a class for specific page styling if needed -->
+            <div class="container">
+                <h2>Latest Thoughts & Articles</h2>
+                <div class="blog-layout">
+                    <article class="blog-post">
+                        <header class="blog-post-header">
+                            <h3>Building My Portfolio: A Vanilla JS Journey</h3>
+                            <p class="blog-meta">
+                                <span class="blog-date">Published: <time datetime="2025-06-01">June 01, 2025</time></span>
+                                <span class="blog-tags">Tags: <span>Web Development</span> <span>HTML</span> <span>CSS</span> <span>JavaScript</span> <span>Portfolio</span> <span>UI/UX</span> <span>Cursor</span> <span>AI</span></span>
+                            </p>
+                        </header>
+                        
+                        <div class="blog-content">
+                            <p>Welcome to the very first post on my new portfolio site! It feels fitting that the inaugural article should be about the creation of this site itself – a project built from the ground up using fundamental web technologies: HTML, CSS, and vanilla JavaScript.</p>
+                            
+                            <h4>The Initial Spark & Requirements</h4>
+                            <p>The goal was to create a clean, modern, and responsive online space to showcase my skills and projects. Key requirements included a design that could adapt its color theme from a logo, content driven by my resume, standard navigation (Home, Projects, Contact, Blog), a Google Maps integration for my location, and crucially, a structure that would be easy to maintain and potentially upgrade to a more dynamic backend or a JavaScript framework like Svelte or React in the future.</p>
+
+                            <h4>Our Approach: Phased & Iterative with AI Collaboration</h4>
+                            <p>We tackled this with a phased implementation. Working within the Cursor IDE, I leveraged its AI capabilities extensively. My AI assistant (Gemini!) helped generate boilerplate code, suggest modern design patterns, draft content like this very blog post, and rapidly iterate on CSS styles and JavaScript functionalities. This collaborative approach significantly sped up the development process and helped in exploring different solutions quickly. Starting with the basic HTML skeleton, we progressively layered on styling and functionality, allowing for focused development on each section.</p>
+                            
+                            <h4>Core Technologies & Design Philosophy</h4>
+                            <p>Sticking to vanilla HTML, CSS, and JavaScript was a deliberate choice to demonstrate foundational skills. The design process was guided by the principles outlined in my <a href="https://github.com/jmrecodes/GenAI-UI-UX-Markdowns" title="Link to your GenAI-UI-UX-Markdowns">GenAI-UI-UX Design System Brief</a>, emphasizing simplicity, usability, and accessibility. The AI played a crucial role here too, by helping to translate these principles into concrete code and ensuring adherence to the brief. We aimed for a modern aesthetic with responsive layouts, dynamic elements like the sticky header with a logo swap on scroll, and a mobile-friendly hamburger menu.</p>
+
+                            <h4>Key Features Implemented:</h4>
+                            <ul>
+                                <li><strong>Responsive Design:</strong> Ensuring the site looks and works great on desktops, tablets, and mobile devices using CSS media queries and flexible layouts (like CSS Grid and Flexbox).</li>
+                                <li><strong>Dynamic Header:</strong> A sticky header that changes appearance and swaps the logo on scroll for a polished user experience.</li>
+                                <li><strong>Modern Navigation:</strong> Smooth scrolling for on-page links, active link highlighting, and a responsive hamburger menu for smaller screens.</li>
+                                <li><strong>Content Sections:</strong> Populating the Home, Projects, and Contact sections with relevant information and interactive elements like the Google Map.</li>
+                                <li><strong>Future-Proofing:</strong> Using semantic HTML and modular CSS to make future updates or framework integrations smoother.</li>
+                            </ul>
+
+                            <h4>Challenges & Learnings</h4>
+                            <p>One of the interesting parts was fine-tuning the Google Maps API integration, especially ensuring the API key was correctly activated and configured, and then migrating to the new <code>AdvancedMarkerElement</code>. Iteratively refining the CSS with AI suggestions to achieve the desired modern look and feel for elements like section titles and the skills layout was also a key part of the process. Each step was a learning opportunity!</p>
+
+                            <h4>What's Next?</h4>
+                            <p>This portfolio is a living project. I plan to add more projects, write more blog posts sharing insights and learnings, and perhaps even explore those future upgrades we planned for. For now, I'm excited to have this platform live. Thanks for reading!</p>
+                        </div>
+                    </article>
+                    <!-- More blog posts can be added here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 jmrecodes. All rights reserved.</p> <!-- Ensure year is current -->
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <!-- Google Maps API script removed from here as it's not needed on the blog page if no map is present -->
+</body>
+</html> 
