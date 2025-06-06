@@ -22,6 +22,10 @@
                     <li><a href="blog.html">Blog</a></li>
                 </ul>
             </nav>
+            <a href="https://github.com/jmrecodes" target="_blank" rel="noopener" class="github-action">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                <span>GitHub</span>
+            </a>
             <button id="burger-menu" aria-label="Open navigation menu" aria-expanded="false">
                 <span class="burger-bar"></span>
                 <span class="burger-bar"></span>
@@ -33,59 +37,33 @@
     <main>
         <section id="home">
             <div class="container">
-                <h2>Hi! My name is John Moremm, a Backend Laravel Developer. Welcome to my portfolio site.</h2>
-                <div class="profile-overview">
-                    <h3>Professional Summary</h3>
-                    <p>Results-driven Full-stack Developer with 4 years of experience in web development utilizing Laravel/PHP and 1 year specializing in frontend and mobile applications with React.js/React Native. Proven ability to deliver strategic, business-oriented software solutions with a methodical approach to problem-solving.</p>
-                    
-                    <h3>Technical Skills</h3>
-                    <div class="skills-container">
-                        <div class="skills-category">
-                            <h4>Frontend</h4>
-                            <ul>
-                                <li>JavaScript</li>
-                                <li>jQuery</li>
-                                <li>HTML5</li>
-                                <li>CSS3</li>
-                                <li>Bootstrap</li>
-                                <li>React.js</li>
-                                <li>React Native</li>
-                                <li>Vue.js</li>
-                            </ul>
+                <h2 class="title-gradient">Hi! My name is John Moremm, a Backend Laravel Developer. Welcome to my portfolio site.</h2>
+                <div class="profile-content">
+                    <div class="profile-overview">
+                        <h3 class="subsection-heading">Introduction</h3>
+                        <div class="introduction-content">
+                            <p>Hello! I'm a software engineer with a foundation in architecting robust backend systems, and I'm driven to build seamless, end-to-end user experiences.</p>
+                            
+                            <p>I thrive on the challenge of translating complex business requirements into effective, scalable software. In my projects, you'll see how I approach building everything from the server-side logic to an intuitive user interface. My goal is always to create reliable, high-impact solutions.</p>
+                            
+                            <div class="cta-buttons">
+                                <a href="#projects" class="cta-button primary">View My Projects</a>
+                                <a href="#contact" class="cta-button secondary">Get In Touch</a>
+                            </div>
                         </div>
-                        <div class="skills-category">
-                            <h4>Backend</h4>
-                            <ul>
-                                <li>PHP</li>
-                                <li>Laravel</li>
-                                <li>Node.js</li>
-                                <li>Express</li>
-                            </ul>
+                    </div>
+                    <div class="profile-highlights">
+                        <div class="highlight-card">
+                            <h4>Backend Focus</h4>
+                            <p>Specializing in Laravel/PHP ecosystem with robust API development and database optimization</p>
                         </div>
-                        <div class="skills-category">
-                            <h4>Databases</h4>
-                            <ul>
-                                <li>MySQL</li>
-                                <li>MariaDB</li>
-                                <li>PostgreSQL</li>
-                                <li>MongoDB</li>
-                            </ul>
+                        <div class="highlight-card">
+                            <h4>Fullstack Capabilities</h4>
+                            <p>Experience with frontend frameworks and mobile development to deliver complete solutions</p>
                         </div>
-                        <div class="skills-category">
-                            <h4>Tools & Methods</h4>
-                            <ul>
-                                <li>RESTful APIs</li>
-                                <li>Git</li>
-                                <li>Agile Development</li>
-                            </ul>
-                        </div>
-                        <div class="skills-category">
-                            <h4>Core Competencies</h4>
-                            <ul>
-                                <li>Algorithm Design</li>
-                                <li>Database Design</li>
-                                <li>Back End Development</li>
-                            </ul>
+                        <div class="highlight-card">
+                            <h4>Problem Solving</h4>
+                            <p>Methodical approach to solving complex technical challenges and business requirements</p>
                         </div>
                     </div>
                 </div>
@@ -93,22 +71,90 @@
         </section>
         <section id="projects">
             <div class="container">
-                <h2>My Projects</h2>
+                <h2 class="title-simple">My Projects</h2>
                 <div class="project-grid">
                     <article class="project-card">
-                        <!-- <img src="assets/images/project-portfolio-thumb.jpg" alt="Portfolio Project Thumbnail" class="project-thumbnail"> -->
-                        <h3>This Portfolio Website</h3>
-                        <p class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive Design</span></p>
-                        <p>My personal portfolio site, designed and built from scratch using vanilla HTML, CSS, and JavaScript. It showcases my skills, projects, and provides a way to get in touch. The site is fully responsive and built with future adaptability in mind.</p>
-                        <!-- <a href="#" class="btn-view-project">View Details (coming soon)</a> -->
+                        <div class="project-content">
+                            <header class="project-header">
+                                <h3 class="project-title"><a href="https://github.com/jmrecodes/jmrecodes.com" target="_blank" rel="noopener">jmrecodes.com</a></h3>
+                            </header>
+                            <div class="project-tags-container">
+                                <span class="project-tag">HTML</span>
+                                <span class="project-tag">CSS</span>
+                                <span class="project-tag">JavaScript</span>
+                                <span class="project-tag">Responsive Design</span>
+                            </div>
+                            <p class="project-description">A personal portfolio site developed from scratch using vanilla HTML, CSS, and JavaScript. It is designed to be a clean and responsive platform that effectively showcases my key projects and technical abilities.</p>
+                        </div>
                     </article>
-                    <!-- More projects will be added here -->
+
+                    <article class="project-card">
+                        <div class="project-content">
+                            <header class="project-header">
+                                <h3 class="project-title"><a href="https://github.com/jmrecodes/wazzup-news-aggregator-api" target="_blank" rel="noopener">Wazzup News Aggregator API</a></h3>
+                            </header>
+                            <div class="project-tags-container">
+                                <span class="project-tag">Laravel</span>
+                                <span class="project-tag">PHP</span>
+                                <span class="project-tag">API</span>
+                                <span class="project-tag">SOLID</span>
+                                <span class="project-tag">Design Patterns</span>
+                            </div>
+                            <p class="project-description">This project is a practical demonstration of a Laravel-powered news aggregation API. The backend is intentionally architected to showcase the application of SOLID principles and fundamental design patterns, resulting in a clean, robust, and testable codebase.</p>
+                        </div>
+                    </article>
+                    
+                    <article class="project-card">
+                        <div class="project-content">
+                            <header class="project-header">
+                                <h3 class="project-title"><a href="https://github.com/jmrecodes/GenAI-UI-UX-Markdowns" target="_blank" rel="noopener">Brief Markdowns for Gen AIs</a></h3>
+                            </header>
+                            <div class="project-tags-container">
+                                <span class="project-tag">Markdown</span>
+                                <span class="project-tag">UI/UX</span>
+                                <span class="project-tag">AI</span>
+                                <span class="project-tag">Documentation</span>
+                            </div>
+                            <p class="project-description">A collection of Web Design Briefs in Markdown format, developed as a standardized reference for AI code generation. They are structured to ensure that resulting applications consistently adhere to established, global UI/UX standards.</p>
+                        </div>
+                    </article>
+                    
+                    <article class="project-card">
+                        <div class="project-content">
+                            <header class="project-header">
+                                <h3 class="project-title"><a href="https://github.com/jmrecodes/CartStoreBasicRoleWithStripe" target="_blank" rel="noopener">Store with basic Cart features</a></h3>
+                            </header>
+                            <div class="project-tags-container">
+                                <span class="project-tag">Laravel</span>
+                                <span class="project-tag">PHP</span>
+                                <span class="project-tag">E-commerce</span>
+                                <span class="project-tag">Stripe</span>
+                                <span class="project-tag">Cashier</span>
+                            </div>
+                            <p class="project-description">A lightweight e-commerce application developed with Laravel 12, designed to showcase a fundamental understanding of backend development. The app provides core shopping cart functionality and processes secure, one-time purchases utilizing Stripe and the Laravel Cashier package.</p>
+                        </div>
+                    </article>
+                    
+                    <article class="project-card">
+                        <div class="project-content">
+                            <header class="project-header">
+                                <h3 class="project-title"><a href="https://github.com/jmrecodes/HackMD-notes" target="_blank" rel="noopener">Accumulated HackMD Knowledge Base</a></h3>
+                            </header>
+                            <div class="project-tags-container">
+                                <span class="project-tag">HackMD</span>
+                                <span class="project-tag">Knowledge Base</span>
+                                <span class="project-tag">Documentation</span>
+                                <span class="project-tag">Technical Notes</span>
+                            </div>
+                            <p class="project-description">A personal knowledge hub, designed to capture and share notes on a diverse array of topics, both technical and non-technical. It offers a collection of guides and insights, with subjects ranging from software development and AI to various other areas of interest.</p>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
         <section id="contact">
             <div class="container">
-                <h2>Get In Touch</h2>
+                <h2 class="title-simple">Get In Touch</h2>
                 <div class="contact-grid">
                     <div class="contact-details">
                         <h3>Contact Information</h3>
@@ -139,7 +185,7 @@
                                 <label for="message">Message</label>
                                 <textarea id="message" name="message" rows="5" required></textarea>
                             </div>
-                            <button type="submit" class="btn-submit" disabled>Send Message</button>
+                            <button type="submit" class="btn-submit disabled" disabled>Send Message</button>
                         </form>
                     </div>
                 </div>
@@ -152,7 +198,26 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 jmrecodes. All rights reserved.</p>
+            <div class="footer-content">
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/jmrecodes" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn Profile">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/linkedin.svg" alt="LinkedIn">
+                    </a>
+                    <a href="https://www.hackerrank.com/profile/jmrecodes" target="_blank" rel="noopener" class="social-link" aria-label="HackerRank Profile">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/hackerrank.svg" alt="HackerRank">
+                    </a>
+                    <a href="https://leetcode.com/u/jmrecodes" target="_blank" rel="noopener" class="social-link" aria-label="LeetCode Profile">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/leetcode.svg" alt="LeetCode">
+                    </a>
+                    <a href="https://www.freecodecamp.org/jmrecodes" target="_blank" rel="noopener" class="social-link" aria-label="freeCodeCamp Profile">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/freecodecamp.svg" alt="freeCodeCamp">
+                    </a>
+                    <a href="https://github.com/jmrecodes" target="_blank" rel="noopener" class="social-link" aria-label="GitHub Profile">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/github.svg" alt="GitHub">
+                    </a>
+                </div>
+                <p>&copy; 2025 jmrecodes. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 

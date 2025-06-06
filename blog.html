@@ -24,6 +24,10 @@
                     <li><a href="blog.html" class="active-link">Blog</a></li> <!-- Blog link active on this page -->
                 </ul>
             </nav>
+            <a href="https://github.com/jmrecodes" target="_blank" rel="noopener" class="github-action">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                <span>GitHub</span>
+            </a>
             <button id="burger-menu" aria-label="Open navigation menu" aria-expanded="false">
                 <span class="burger-bar"></span>
                 <span class="burger-bar"></span>
@@ -35,8 +39,77 @@
     <main>
         <section id="blog" class="blog-page-section"> <!-- Add a class for specific page styling if needed -->
             <div class="container">
-                <h2>Latest Thoughts & Articles</h2>
+                <h2 class="title-gradient">Latest Thoughts & Articles</h2>
                 <div class="blog-layout">
+                    <article class="blog-post">
+                        <header class="blog-post-header">
+                            <h3>Portfolio Update: New Projects & Design Refresh</h3>
+                            <p class="blog-meta">
+                                <span class="blog-date">Published: <time datetime="2025-06-07">June 07, 2025</time></span>
+                                <span class="blog-tags">Tags: <span>Web Development</span> <span>GitHub</span> <span>Portfolio</span> <span>Projects</span></span>
+                            </p>
+                        </header>
+                        
+                        <div class="blog-content">
+                            <p>Today marks an exciting update to my portfolio site with the addition of several new projects and a complete design refresh of the projects section. These changes showcase my recent work while implementing improved visual hierarchy and UI components based on my design system guidelines.</p>
+                            
+                            <h4>New Projects Added</h4>
+                            <p>I've expanded the portfolio with four additional projects that highlight different aspects of my technical expertise:</p>
+
+                            <ul>
+                                <li><strong>Wazzup News Aggregator API</strong> - A Laravel-powered API showcasing SOLID principles and design patterns</li>
+                                <li><strong>Brief Markdowns for Gen AIs</strong> - A collection of standardized UI/UX reference documents for AI code generation</li>
+                                <li><strong>Store with basic Cart features</strong> - A Laravel 12 e-commerce implementation with Stripe integration</li>
+                                <li><strong>Accumulated HackMD Knowledge Base</strong> - A personal knowledge hub covering various technical topics</li>
+                            </ul>
+
+                            <h4>Design System Implementation</h4>
+                            <p>The redesign of the projects section provided an opportunity to better apply the principles from my <a href="https://github.com/jmrecodes/GenAI-UI-UX-Markdowns" title="Link to GenAI-UI-UX-Markdowns">Web Design System Brief</a>. The key improvements include:</p>
+                            
+                            <ul>
+                                <li><strong>Enhanced Typography Hierarchy</strong> - Section headings now feature a consistent styling with an underline accent that creates visual interest while maintaining readability</li>
+                                <li><strong>Card-Based Layout</strong> - Each project is displayed in a card with subtle shadows and hover effects that provide depth without overwhelming the content</li>
+                                <li><strong>Refined Tag System</strong> - Technology tags now use pill-shaped elements with the site's color scheme for better visual distinction</li>
+                                <li><strong>Interactive Elements</strong> - Project titles feature subtle underline animations on hover, improving user feedback and engagement</li>
+                            </ul>
+
+                            <h4>Technical Implementation</h4>
+                            <p>The redesign leveraged several modern CSS techniques:</p>
+                            
+                            <ul>
+                                <li>CSS Grid for responsive, automatically adjusting layouts</li>
+                                <li>CSS custom properties (variables) to maintain consistent styling across components</li>
+                                <li>CSS transitions for smooth hover interactions</li>
+                                <li>Improved semantic HTML structure with appropriate header, article, and section elements</li>
+                            </ul>
+
+                            <h4>Visual Consistency</h4>
+                            <p>A key goal of this update was to maintain visual consistency throughout the site. By applying the section-heading class to all major headings and using consistent spacing patterns, the entire site now has a more cohesive feel. The project cards use the same color variables and border-radius values as other components, ensuring a unified design language.</p>
+
+                            <h4>Enhanced Connectivity with Social Links</h4>
+                            <p>In addition to the project updates, I've added social media links to the footer and a dedicated GitHub button in the header. These changes make it easier for visitors to connect with me across different platforms and explore my code repositories. The social links include profiles on:</p>
+                            
+                            <ul>
+                                <li><strong>GitHub</strong> - Where all my project repositories are hosted</li>
+                                <li><strong>LinkedIn</strong> - For professional networking</li>
+                                <li><strong>HackerRank, LeetCode & freeCodeCamp</strong> - Showcasing my coding practice and problem-solving skills</li>
+                            </ul>
+                            
+                            <p>The dedicated GitHub button in the navigation area provides instant access to my main code repository, emphasizing the importance of this platform in my development workflow. These social connections are designed with subtle hover animations and consistent styling that matches the site's overall aesthetic.</p>
+
+                            <h4>What's Next?</h4>
+                            <p>With these updates in place, I'm now looking ahead to further refining the portfolio. Future improvements might include:</p>
+                            
+                            <ul>
+                                <li>Adding detailed project case studies with development processes and outcomes</li>
+                                <li>Implementing a dark mode toggle based on the existing color variables</li>
+                                <li>Creating a filterable projects section to allow visitors to sort by technology or project type</li>
+                            </ul>
+                            
+                            <p>Stay tuned for more updates as I continue to enhance both the content and design of this portfolio!</p>
+                        </div>
+                    </article>
+
                     <article class="blog-post">
                         <header class="blog-post-header">
                             <h3>Building My Portfolio: A Vanilla JS Journey</h3>
@@ -74,7 +147,6 @@
                             <p>This portfolio is a living project. I plan to add more projects, write more blog posts sharing insights and learnings, and perhaps even explore those future upgrades we planned for. For now, I'm excited to have this platform live. Thanks for reading!</p>
                         </div>
                     </article>
-                    <!-- More blog posts can be added here -->
                 </div>
             </div>
         </section>
@@ -82,7 +154,26 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 jmrecodes. All rights reserved.</p> <!-- Ensure year is current -->
+            <div class="footer-content">
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/jmrecodes" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn Profile">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/linkedin.svg" alt="LinkedIn">
+                    </a>
+                    <a href="https://www.hackerrank.com/profile/jmrecodes" target="_blank" rel="noopener" class="social-link" aria-label="HackerRank Profile">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/hackerrank.svg" alt="HackerRank">
+                    </a>
+                    <a href="https://leetcode.com/u/jmrecodes" target="_blank" rel="noopener" class="social-link" aria-label="LeetCode Profile">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/leetcode.svg" alt="LeetCode">
+                    </a>
+                    <a href="https://www.freecodecamp.org/jmrecodes" target="_blank" rel="noopener" class="social-link" aria-label="freeCodeCamp Profile">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/freecodecamp.svg" alt="freeCodeCamp">
+                    </a>
+                    <a href="https://github.com/jmrecodes" target="_blank" rel="noopener" class="social-link" aria-label="GitHub Profile">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/github.svg" alt="GitHub">
+                    </a>
+                </div>
+                <p>&copy; 2025 jmrecodes. All rights reserved.</p> <!-- Ensure year is current -->
+            </div>
         </div>
     </footer>
 

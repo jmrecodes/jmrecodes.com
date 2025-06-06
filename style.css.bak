@@ -28,15 +28,7 @@ body {
     width: 90%; /* Slightly wider for modern feel */
     max-width: 1200px; /* Max width for larger screens */
     margin: auto;
-    overflow: hidden;
     padding: 0 20px;
-}
-
-/* disabled buttons */
-.disabled {
-    background-color: var(--neutral-color-2) !important;
-    color: var(--text-color-dark) !important;
-    cursor: not-allowed !important;
 }
 
 /* Header Styling */
@@ -160,14 +152,173 @@ footer {
     margin-top: 20px;
 }
 
+/* Utility for clearing floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
 /* Home Section Styling */
 #home {
     background-color: var(--background-color-light);
     text-align: center; /* Center the main welcome text */
 }
 
+#home h2 {
+    margin-top: 0;
+    padding-top: 20px; /* Add some space if h2 is directly after header */
+    color: var(--primary-color);
+}
+
+.profile-overview {
+    text-align: left; /* Align text to the left for summary and skills */
+    margin-top: 20px;
+}
+
+.profile-banner-image {
+    width: 100%;
+    max-height: 300px; /* Adjust as needed */
+    object-fit: cover; /* To cover the area without distorting aspect ratio */
+    margin-bottom: 30px;
+    border-radius: 8px; /* Optional: for rounded corners */
+}
+
+.profile-overview h3 {
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--accent-color-1);
+    padding-bottom: 5px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 1.8em; /* Slightly larger for better hierarchy */
+}
+
+.skills-container {
+    /* display: flex; Remove flex for CSS columns */
+    /* flex-wrap: wrap; */
+    /* gap: 20px; */
+    /* justify-content: space-between; */
+    
+    column-count: 3; /* Aim for 3 columns */
+    column-gap: 30px; /* Space between columns */
+    margin-top: 20px;
+}
+
+.skills-category {
+    /* background-color: var(--neutral-color-1); No longer needed if container has background? Or keep for contrast. */
+    background-color: var(--background-color-light); /* Cards on the home section background */
+    padding: 20px; /* Increased padding */
+    border-radius: 8px; /* More rounded corners */
+    /* flex-basis: calc(33.333% - 20px); Remove flex-basis */
+    margin-bottom: 30px; /* Space between items in the same column */
+    break-inside: avoid-column; /* Prevent categories from breaking across columns */
+    width: 100%; /* Ensure it takes full width of its column slot */
+}
+
+.skills-category h4 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.skills-category ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skills-category li {
+    background-color: var(--background-color-light);
+    color: var(--text-color-dark);
+    padding: 8px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    font-size: 0.9em;
+    border-left: 3px solid var(--accent-color-1);
+}
+
+/* Responsive adjustments for columns */
+@media (max-width: 992px) { /* For tablets */
+    .skills-container {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 576px) { /* For small mobile */
+    .skills-container {
+        column-count: 1;
+    }
+}
+
+/* Responsive Navigation (Tablet/Mobile) - Example breakpoint: 768px */
+@media (max-width: 768px) {
+    .header-container {
+        /* Allow logo and burger to align properly */
+    }
+
+    nav#main-nav {
+        display: none; /* Hide nav by default on mobile */
+        position: absolute;
+        top: 100%; /* Position below the header */
+        left: 0;
+        width: 100%;
+        background-color: var(--background-color-light);
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        padding: 10px 0;
+    }
+
+    nav#main-nav.open {
+        display: block; /* Show nav when burger is clicked */
+    }
+
+    nav#main-nav ul {
+        flex-direction: column; /* Stack links vertically */
+        align-items: center;
+    }
+
+    nav#main-nav li {
+        margin: 10px 0;
+        padding: 0;
+    }
+
+    nav#main-nav a {
+        padding: 10px 20px;
+        display: block; /* Make links full width for easier tapping */
+        width: 100%;
+        text-align: center;
+    }
+
+    nav#main-nav a:hover,
+    nav#main-nav a:focus,
+    nav#main-nav a.active-link {
+        background-color: var(--neutral-color-1);
+        border-bottom: none; /* Remove border for mobile view */
+    }
+
+    #burger-menu {
+        display: block; /* Show burger on mobile */
+    }
+
+    /* Burger animation to X */
+    #burger-menu.open .burger-bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    #burger-menu.open .burger-bar:nth-child(2) {
+        opacity: 0;
+    }
+    #burger-menu.open .burger-bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    
+    /* Adjust body padding if header height changes when scrolled on mobile */
+    /* body.scrolled-padding { -- JS handles dynamic padding now
+      padding-top: 65px; 
+    } */
+}
+
 /* General Section Title Styling */
-.title-gradient {
+section h2 {
     text-align: center;
     margin-bottom: 50px; /* Increased margin */
     font-size: clamp(2.5em, 5vw, 4.5em); /* Responsive font size: min, preferred (scales with viewport width), max */
@@ -183,7 +334,8 @@ footer {
     position: relative; /* For pseudo-elements if needed for more effects */
 }
 
-.title-gradient::after {
+/* Optional: Add a subtle underline effect */
+section h2::after {
     content: '';
     display: block;
     width: 80px; /* Width of the underline */
@@ -193,11 +345,26 @@ footer {
     border-radius: 2px;
 }
 
-#home .title-gradient {
+/* Home Section Styling - adjustments if needed */
+#home h2 { /* Specific styling for home if different from general section titles */
+    margin-top: 0;
+    padding-top: 20px;
     font-size: clamp(2em, 4vw, 3.5em); /* Slightly smaller for the welcome, still responsive */
+    /* Retain gradient fill from general h2 or specify different if desired */
+    background: linear-gradient(45deg, var(--primary-color), var(--accent-color-2), var(--accent-color-1));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    /* text-fill-color: transparent; */
 }
 
-.title-simple {
+#home h2::after {
+    /* Optionally remove or change the underline for the home H2 if it feels too much */
+    /* display: none; */ 
+}
+
+/* Projects Section Styling */
+.section-heading {
     font-size: 2.5rem;
     margin-bottom: 2rem;
     position: relative;
@@ -205,7 +372,7 @@ footer {
     color: var(--secondary-color);
 }
 
-.title-simple::after {
+.section-heading::after {
     content: '';
     position: absolute;
     bottom: -0.5rem;
@@ -215,7 +382,6 @@ footer {
     background: var(--primary-color);
 }
 
-/* Projects Section Styling */
 .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -424,6 +590,16 @@ footer {
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
+/* Responsive Contact Section */
+@media (max-width: 992px) {
+    .contact-grid {
+        grid-template-columns: 1fr; /* Stack on tablets */
+    }
+    .contact-form-container {
+        margin-top: 30px; /* Add space when stacked */
+    }
+}
+
 /* Blog Section Styling */
 #blog {
     background-color: var(--neutral-color-1); /* Light background for contrast */
@@ -535,6 +711,45 @@ footer {
     font-size: 0.9em;
 }
 
+/* Responsive Blog Adjustments */
+@media (max-width: 768px) {
+    .blog-post {
+        padding: 20px;
+    }
+    .blog-post-header h3 {
+        font-size: 1.8em;
+    }
+    .blog-content h4 {
+        font-size: 1.3em;
+    }
+    .blog-content p,
+    .blog-content ul,
+    .blog-content ol {
+        font-size: 1em;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-heading {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-heading {
+        font-size: 1.8rem;
+    }
+    
+    .project-content {
+        padding: 1.25rem;
+    }
+}
+
 /* GitHub Action Button */
 .github-action {
     display: flex;
@@ -626,6 +841,27 @@ footer {
     transform: scale(1.1);
 }
 
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+    .github-action {
+        display: none; /* Hide on mobile, can be adjusted based on preference */
+    }
+    
+    .social-links {
+        gap: 0.75rem;
+    }
+    
+    .social-link {
+        width: 38px;
+        height: 38px;
+    }
+    
+    .social-link img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
 /* Home Section Redesign */
 .profile-content {
     display: grid;
@@ -637,8 +873,6 @@ footer {
 .profile-overview {
     display: flex;
     flex-direction: column;
-    text-align: left;
-    margin-top: 20px;
 }
 
 .subsection-heading {
@@ -741,13 +975,42 @@ footer {
     font-size: 0.95rem;
 }
 
+/* Media queries for home section */
+@media (max-width: 992px) {
+    .profile-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .profile-highlights {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-highlights {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, auto);
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+    }
+    
+    .cta-button {
+        text-align: center;
+    }
+}
+
 /*
 ==============================================
 RESPONSIVE STYLES
 ==============================================
+Organized from largest to smallest breakpoint.
 */
 
-/* Tablet & Smaller Desktops */
+/* For tablets and larger devices */
 @media (max-width: 992px) {
     /* Contact Section */
     .contact-grid {
@@ -769,9 +1032,9 @@ RESPONSIVE STYLES
     }
 }
 
-/* Mobile & Tablet */
+/* For tablets and mobile devices */
 @media (max-width: 768px) {
-    /* Header & Navigation */
+    /* --- Header & Navigation --- */
     .header-container {
         /* Allow logo and burger to align properly */
     }
@@ -830,7 +1093,7 @@ RESPONSIVE STYLES
         transform: translateY(-8px) rotate(-45deg);
     }
 
-    /* Blog */
+    /* --- Blog Section --- */
     .blog-post {
         padding: 20px;
     }
@@ -846,20 +1109,21 @@ RESPONSIVE STYLES
         font-size: 1em;
     }
 
-    /* Projects */
+    /* --- Projects Section --- */
     .project-grid {
         grid-template-columns: 1fr;
     }
     
-    .title-simple {
+    .section-heading {
         font-size: 2rem;
     }
 
-    /* Header/Footer Elements */
+    /* --- GitHub Action Button --- */
     .github-action {
         display: none; /* Hide on mobile, can be adjusted based on preference */
     }
     
+    /* --- Footer Social Links --- */
     .social-links {
         gap: 0.75rem;
     }
@@ -874,7 +1138,7 @@ RESPONSIVE STYLES
         height: 20px;
     }
 
-    /* Home Section */
+    /* --- Home Section --- */
     .profile-highlights {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(3, auto);
@@ -889,9 +1153,15 @@ RESPONSIVE STYLES
     }
 }
 
-/* Small Mobile */
+/* For small mobile devices */
+@media (max-width: 576px) {
+    /* Styles for small mobile devices can be added here. */
+}
+
+/* For extra small mobile devices */
 @media (max-width: 480px) {
-    .title-simple {
+    /* Projects Section */
+    .section-heading {
         font-size: 1.8rem;
     }
     
