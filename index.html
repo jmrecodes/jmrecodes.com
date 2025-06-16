@@ -20,6 +20,13 @@
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li><a href="blog.html">Blog</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link cv-dropbtn" aria-haspopup="true" aria-expanded="false">View CV ▼</a>
+                        <div class="dropdown-content">
+                            <a href="cv_jmrecodes.pdf" target="_blank" rel="noopener">PDF Version</a>
+                            <a href="cv_jmrecodes.html" target="_blank" rel="noopener">Web Version</a>
+                        </div>
+                    </li>
                 </ul>
             </nav>
             <a href="https://github.com/jmrecodes" target="_blank" rel="noopener" class="github-action">
@@ -281,5 +288,106 @@
 
     <script src="script.js"></script>
     <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBt6k03WFmFgBY3KL0mfH4pSiCEvtOd6xs&loading=async&callback=initMap"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // CV Dropdown Toggle
+    const cvDropdownBtn = document.querySelector('#main-nav ul li.dropdown .cv-dropbtn');
+    const cvDropdownContent = document.querySelector('#main-nav ul li.dropdown .dropdown-content');
+
+    if (cvDropdownBtn && cvDropdownContent) {
+        cvDropdownBtn.addEventListener('click', function(event) {
+            event.preventDefault();
+            const isExpanded = cvDropdownContent.classList.toggle('active');
+            cvDropdownBtn.setAttribute('aria-expanded', isExpanded);
+        });
+
+        window.addEventListener('click', function(event) {
+            if (cvDropdownContent && cvDropdownContent.classList.contains('active')) {
+                if (!cvDropdownBtn.contains(event.target) && !cvDropdownContent.contains(event.target)) {
+                    cvDropdownContent.classList.remove('active');
+                    cvDropdownBtn.setAttribute('aria-expanded', 'false');
+                }
+            }
+        });
+    }
+
+    // Preserve existing script.js functionality for burger menu
+    const burgerMenu = document.getElementById('burger-menu');
+    const mainNav = document.getElementById('main-nav');
+    const logoSquare = document.getElementById('logo-square');
+    const logoBanner = document.getElementById('logo-banner');
+    const header = document.getElementById('main-header');
+
+    if (burgerMenu && mainNav) {
+        burgerMenu.addEventListener('click', () => {
+            const isExpanded = mainNav.classList.toggle('active');
+            burgerMenu.setAttribute('aria-expanded', isExpanded);
+            if (header) { // Toggle class on header as well if needed for background
+                 header.classList.toggle('nav-active');
+            }
+        });
+    }
+    
+    // Preserve existing logo switch functionality
+    if (logoSquare && logoBanner && header) {
+        const checkScroll = () => {
+            const isScrolled = window.scrollY > 50;
+            if (isScrolled) {
+                logoSquare.classList.remove('active');
+                logoBanner.classList.add('active');
+                header.classList.add('scrolled');
+            } else {
+                logoSquare.classList.add('active');
+                logoBanner.classList.remove('active');
+                header.classList.remove('scrolled');
+            }
+        };
+        window.addEventListener('scroll', checkScroll);
+        checkScroll(); // Initial check
+    }
+
+    // Preserve contact form functionality
+    const contactForm = document.getElementById('contact-form');
+    const submitButton = contactForm ? contactForm.querySelector('button[type="submit"]') : null;
+
+    if (contactForm && submitButton) {
+        const requiredFields = contactForm.querySelectorAll('[required]');
+        const validateForm = () => {
+            let allValid = true;
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    allValid = false;
+                }
+            });
+            if (allValid) {
+                submitButton.removeAttribute('disabled');
+                submitButton.classList.remove('disabled');
+            } else {
+                submitButton.setAttribute('disabled', 'true');
+                submitButton.classList.add('disabled');
+            }
+        };
+        requiredFields.forEach(field => {
+            field.addEventListener('input', validateForm);
+        });
+        validateForm(); // Initial check
+
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            if (!submitButton.hasAttribute('disabled')) {
+                // Basic form data logging for demonstration; replace with actual submission logic
+                const formData = new FormData(contactForm);
+                console.log('Form submitted (locally):');
+                for (let [name, value] of formData) {
+                    console.log(`${name}: ${value}`);
+                }
+                alert('Message sent (simulated)! Thank you.');
+                contactForm.reset();
+                validateForm(); // Re-disable button
+            }
+        });
+    }
+});
+</script>
 </body>
 </html>

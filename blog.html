@@ -22,6 +22,13 @@
                     <li><a href="index.html#projects">Projects</a></li>
                     <li><a href="index.html#contact">Contact</a></li>
                     <li><a href="blog.html" class="active-link">Blog</a></li> <!-- Blog link active on this page -->
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link cv-dropbtn" aria-haspopup="true" aria-expanded="false">View CV ▼</a>
+                        <div class="dropdown-content">
+                            <a href="cv_jmrecodes.pdf" target="_blank" rel="noopener">PDF Version</a>
+                            <a href="cv_jmrecodes.html" target="_blank" rel="noopener">Web Version</a>
+                        </div>
+                    </li>
                 </ul>
             </nav>
             <a href="https://github.com/jmrecodes" target="_blank" rel="noopener" class="github-action">
@@ -231,5 +238,68 @@
 
     <script src="script.js"></script>
     <!-- Google Maps API script removed from here as it's not needed on the blog page if no map is present -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // CV Dropdown Toggle
+    const cvDropdownBtn = document.querySelector('#main-nav ul li.dropdown .cv-dropbtn');
+    const cvDropdownContent = document.querySelector('#main-nav ul li.dropdown .dropdown-content');
+
+    if (cvDropdownBtn && cvDropdownContent) {
+        cvDropdownBtn.addEventListener('click', function(event) {
+            event.preventDefault();
+            const isExpanded = cvDropdownContent.classList.toggle('active');
+            cvDropdownBtn.setAttribute('aria-expanded', isExpanded);
+        });
+
+        // Close dropdown when clicking outside
+        window.addEventListener('click', function(event) {
+            if (cvDropdownContent && cvDropdownContent.classList.contains('active')) {
+                // Check if the click is outside the button AND outside the dropdown content
+                if (!cvDropdownBtn.contains(event.target) && !cvDropdownContent.contains(event.target)) {
+                    cvDropdownContent.classList.remove('active');
+                    cvDropdownBtn.setAttribute('aria-expanded', 'false');
+                }
+            }
+        });
+    }
+
+    // Burger Menu Functionality (from original script.js)
+    const burgerMenu = document.getElementById('burger-menu');
+    const mainNav = document.getElementById('main-nav');
+    const header = document.getElementById('main-header'); // Added for nav-active class
+
+    if (burgerMenu && mainNav) {
+        burgerMenu.addEventListener('click', () => {
+            const isExpanded = mainNav.classList.toggle('active');
+            burgerMenu.setAttribute('aria-expanded', isExpanded);
+            if (header) {
+                 header.classList.toggle('nav-active'); // For potential background changes on mobile nav open
+            }
+        });
+    }
+    
+    // Logo Scroll/Switch Functionality (from original script.js)
+    const logoSquare = document.getElementById('logo-square');
+    const logoBanner = document.getElementById('logo-banner');
+    // const header = document.getElementById('main-header'); // Already declared above
+
+    if (logoSquare && logoBanner && header) {
+        const checkScroll = () => {
+            const isScrolled = window.scrollY > 50; // Adjust scroll threshold as needed
+            if (isScrolled) {
+                logoSquare.classList.remove('active');
+                logoBanner.classList.add('active');
+                header.classList.add('scrolled');
+            } else {
+                logoSquare.classList.add('active');
+                logoBanner.classList.remove('active');
+                header.classList.remove('scrolled');
+            }
+        };
+        window.addEventListener('scroll', checkScroll);
+        checkScroll(); // Initial check on page load
+    }
+});
+</script>
 </body>
 </html> 

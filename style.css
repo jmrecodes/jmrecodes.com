@@ -69,6 +69,7 @@ header#main-header.scrolled {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    overflow: visible;
 }
 
 .logo-container {
@@ -117,15 +118,16 @@ nav#main-nav a {
     text-transform: uppercase;
     font-size: 15px; /* Slightly smaller */
     font-weight: 500; /* Medium weight for clarity */
-    transition: color 0.3s ease;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 5px;
+    transition: color 0.3s ease, border-color 0.3s ease;
 }
 
 nav#main-nav a:hover,
 nav#main-nav a:focus,
 nav#main-nav a.active-link { /* For active page indication */
     color: var(--primary-color);
-    border-bottom: 2px solid var(--accent-color-1);
-    padding-bottom: 5px;
+    border-bottom-color: var(--accent-color-1);
 }
 
 /* Hamburger Menu */
@@ -566,6 +568,48 @@ footer {
     height: 20px;
 }
 
+/* CV Dropdown Styles */
+#main-nav ul li.dropdown {
+    position: relative;
+}
+#main-nav ul li.dropdown .cv-dropbtn { /* This is the clickable button */
+    cursor: pointer;
+    display: flex; 
+    align-items: center;
+    /* It inherits text styling and hover effects from the general nav#main-nav a styles */
+}
+#main-nav ul li.dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff; 
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1000; 
+    right: 0; 
+    top: 100%; 
+    border-radius: 4px; 
+    overflow: hidden; 
+}
+#main-nav ul li.dropdown .dropdown-content a { /* These are the links within the dropdown */
+    color: #333; 
+    padding: 10px 15px; 
+    text-decoration: none; /* Override general nav link text-transform if any was inherited */
+    display: block;
+    font-size: 0.9em; 
+    white-space: nowrap;
+    text-transform: none; /* Ensure no uppercase from main nav links */
+    border-bottom: none; /* Remove any inherited border */
+    font-weight: normal; /* Reset font-weight from main nav links */
+}
+#main-nav ul li.dropdown .dropdown-content a:hover {
+    background-color: #f0f0f0; 
+    color: var(--primary-color); /* Match primary color on hover if desired */
+    border-bottom: none; /* Ensure no border on hover from main nav links */
+}
+#main-nav ul li.dropdown .dropdown-content.active {
+    display: block;
+}
+
 /* Footer Social Links */
 .footer-content {
     display: flex;
@@ -778,10 +822,6 @@ RESPONSIVE STYLES
 /* Mobile & Tablet */
 @media (max-width: 768px) {
     /* Header & Navigation */
-    .header-container {
-        /* Allow logo and burger to align properly */
-    }
-
     nav#main-nav {
         display: none; /* Hide nav by default on mobile */
         position: absolute;
@@ -834,6 +874,27 @@ RESPONSIVE STYLES
     }
     #burger-menu.open .burger-bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* CV Dropdown Mobile Styles */
+    #main-nav ul li.dropdown .dropdown-content {
+        position: static; 
+        box-shadow: none;
+        border-top: 1px solid #eee; 
+    }
+    #main-nav ul li.dropdown .dropdown-content a {
+        padding-left: 25px; 
+    }
+    /* Control the CV button specifically on mobile to prevent resize and center it */
+    #main-nav ul li.dropdown a.cv-dropbtn {
+        width: -moz-fit-content; /* Firefox */
+        width: fit-content;      /* Standard */
+        display: block;          /* Make it block to use margin auto for centering */
+        margin-left: auto;       /* Center the block element */
+        margin-right: auto;      /* Center the block element */
+        /* It inherits padding: 10px 20px; from the general mobile nav#main-nav a */
+        /* It inherits text-align: center; from the general mobile nav#main-nav a for its internal text */
+        /* Hover/focus background is handled by the general mobile nav a:hover style */
     }
 
     /* Blog */
